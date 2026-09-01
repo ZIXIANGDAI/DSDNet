@@ -1,0 +1,19 @@
+data:
+  root: "../data"
+  train_split: "train"
+  val_split: "val"
+
+training:
+  device: "cuda"
+  batch_size: 4
+  val_batch_size: 2
+  num_workers: 4
+  epochs: 50
+  learning_rate: 0.04
+  weight_decay: 0.001
+  seed: 11733
+  save_dir: "../runs/stage1"
+
+loss:
+  redundancy_weight: 0.04
+  consistency_weight: 0.05

@@ -1,0 +1,27 @@
+data:
+  root: "../data"
+  train_split: "train"
+  val_split: "val"
+  interval: 1
+  core_labels_dir: "core_labels"
+  edge_labels_dir: "edge_labels"
+
+training:
+  device: "cuda"
+  batch_size: 2
+  val_batch_size: 1
+  num_workers: 4
+  epochs: 50
+  print_interval: 50
+  validation_interval: 500
+  learning_rate: 0.01
+  pretrained_lr_scale: 0.1
+  momentum: 0.9
+  weight_decay: 0.0001
+  seed: 11733
+  save_dir: "../runs/stage2"
+  stage1_init: "../runs/stage1/stage1_to_stage2_init.pth"
+  auxiliary_supervision: true
+  core_loss_weight: 0.2
+  edge_loss_weight: 0.1
+  redundancy_loss_weight: 0.04
